@@ -1,5 +1,7 @@
 # todo.txt
 
+![](readme/demo.gif)
+
 ## Purpose
 
 Adapting a task management system to track personal todos is very beneficial and recommended. However, there are times where you still have to fallback to a simple text file to track your todos. Todo.txt is here to give you at least trackability, when a certain todo in your list has been completed.

@@ -1,6 +1,6 @@
 # todo.txt
 
-![](https://api.travis-ci.com/aymenfurter/todo.txt.svg?branch=master) ![](https://img.shields.io/github/stars/aymenfurter/todo.txt) ![](https://img.shields.io/github/license/aymenfurter/todo.txt)
+![https://travis-ci.com/aymenfurter/todo.txt](https://api.travis-ci.com/aymenfurter/todo.txt.svg?branch=master) ![](https://img.shields.io/github/stars/aymenfurter/todo.txt) ![](https://img.shields.io/github/license/aymenfurter/todo.txt)
 
 ![](https://github.com/aymenfurter/todo.txt/raw/master/readme/demo.gif)
 

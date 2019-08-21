@@ -1,5 +1,7 @@
 # todo.txt
 
+![](https://api.travis-ci.com/aymenfurter/todo.txt.svg?branch=master)
+
 ![](readme/demo.gif)
 
 ## Purpose

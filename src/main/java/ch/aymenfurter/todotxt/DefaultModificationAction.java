@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -19,13 +20,15 @@ public class DefaultModificationAction implements IActionOnModification {
     public void performAction(File todo, File done) {
         _logger.debug("Change detected");
 
+
         BufferedReader reader = null;
         BufferedWriter writer = null;
         File tempFile = null;
         boolean changeApplied = false;
 
         try {
-            tempFile = File.createTempFile("todotxt-", "-txt");
+            tempFile = new File(todo.getAbsolutePath() + "-tmp");
+
 
             reader = new BufferedReader(new FileReader(todo));
             writer = new BufferedWriter(new FileWriter(tempFile));
@@ -49,7 +52,13 @@ public class DefaultModificationAction implements IActionOnModification {
             Util.close(reader);
             if (tempFile != null) {
                 if (changeApplied) {
-                    tempFile.renameTo(todo);
+                    if (!tempFile.renameTo(todo)) {
+                        try {
+                            Files.move(tempFile.toPath(), todo.toPath());
+                        } catch (IOException e) {
+                            _logger.warn("Could not move file after processing.");
+                        }
+                    }
                 }
             } else {
                 throw new IllegalStateException("Could not access temp file.");

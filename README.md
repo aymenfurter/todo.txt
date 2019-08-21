@@ -2,7 +2,8 @@
 
 ![](https://api.travis-ci.com/aymenfurter/todo.txt.svg?branch=master)
 
-![](readme/demo.gif)
+
+![](https://github.com/aymenfurter/todo.txt/raw/master/readme/demo.gif)
 
 ## Purpose
 
@@ -18,6 +19,10 @@ You'll need a text editor which can automatically refresh a file (The docker ima
 You can run the fat jar like this
 
 ```java -jar target/todotxt-fat-jar-with-dependencies.jar```
+
+Or directly use the docker image instead:
+
+```docker run --rm -v ~/todo:/root/todo -it afurter/todo.txt```
 
 ## Prerequesites
 - Java Runtime > 1.8
